@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carousel without script</title>
+  <style type="text/css">
+    .carouselbox {
+      font-family: helvetica,sans-serif;
+      font-size: 14px;
+      width: 400px;
+      position: relative;
+      margin: 1em;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 10px #ccc;
+      overflow: hidden;
+    }
+    .content {
+      margin: 0;
+      padding: 0;
+    }
+    .content li {
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      list-style: none;
+      text-align: center;
+      z-index: 2;
+    }
+    li.big {
+      font-size: 100px;
+    }
+    li span {
+      display: block;
+      width: 150px;
+      margin: 0 auto;
+      font-size: 20px;
+      height: 150px;
+      line-height: 150px;
+      animation: roll 4s infinite linear;    
+    }
+   @keyframes roll {
+      to{
+        transform: rotate(720deg);
+      }
+    }  
+    </style>
+</head>
+<body>
+<div class="carouselbox">
+  <ol class="content">
+    <li>Reiztechnologie</li>
+    <li>Zeitökonomie</li>
+    <li>Qualität des Lebens</li>
+    <li>Kriegsphilosophie</li>
+    <li class="big">1</li>
+    <li class="big">2</li>
+    <li class="big">3</li>
+    <li class="big">4</li>
+    <li>Brüderchen, komm tanz mit mir</li>
+    <li class="big">1</li>
+    <li class="big">2</li>
+    <li class="big">3</li>
+    <li class="big">4</li>
+    <li>Beide Hände reich ich dir</li>
+    <li class="big">1</li>
+    <li class="big">2</li>
+    <li class="big">3</li>
+    <li class="big">4</li>
+    <li><span>Rundherum</span> das ist nicht schwer</li>
+    <li class="big">1</li>
+    <li class="big">2</li>
+    <li class="big">3</li>
+    <li class="big">4</li>
+    <li>Meine Freunde, tanzt mit mir…</li>
+    <li class="big">1</li>
+    <li class="big">2</li>
+    <li class="big">3</li>
+    <li class="big">4</li>
+    <li><span>Rundherum</span> das ist nicht schwer</li>
+  </ol>
+</div>
+</body>
+</html>

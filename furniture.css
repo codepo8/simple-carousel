@@ -1,0 +1,18 @@
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  display: block;
+  background: #eee;
+  margin: 1em 0;
+  padding: .5em;
+}
+nav a {
+  color: #369;
+}
+nav li {
+  list-style: square;
+  line-height: 1.5em;
+}
