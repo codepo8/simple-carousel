@@ -57,9 +57,13 @@
       display: block;
       transform: rotate(180deg);
     }
+    .active li a {
+      color: #369;
+      text-decoration: none;
+    }
     .active li {
       position: absolute;
-      top: 130px;
+      top: 30px;
 
       pointer-events: none;
       opacity: 0;
@@ -89,10 +93,10 @@
     </button>
   </div>
   <ol class="content">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
+    <li><a href="http://christianheilmann.com">1</a></li>
+    <li><a href="http://status.modern.ie">2</a></li>
+    <li><a href="http://developer.mozilla.org">3</a></li>
+    <li><a href="http://imgur.com/aww/">4</a></li>
   </ol>
 </div>
 
@@ -118,13 +122,13 @@ carousel = (function(){
 
   // Read necessary elements from the DOM once
   var box = document.querySelector('.carouselbox');
-  var next = document.querySelector('.next');
-  var prev = document.querySelector('.prev');
+  var next = box.querySelector('.next');
+  var prev = box.querySelector('.prev');
 
   // Define the global counter, the items and the 
   // current item 
   var counter = 0;
-  var items = document.querySelectorAll('.content li');
+  var items = box.querySelectorAll('.content li');
   var amount = items.length;
   var current = items[0];
 

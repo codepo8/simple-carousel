@@ -7,7 +7,6 @@
   <link rel="stylesheet" type="text/css" href="furniture.css">
 
   <style type="text/css">
-
     .carouselbox {
       font-family: helvetica,sans-serif;
       font-size: 14px;
@@ -29,63 +28,22 @@
       width: 100%;
       list-style: none;
       text-align: center;
-      z-index: 2;
     }
     .active {
       height: 130px;
     }
-    .carouselbox button {
-      border: none;
-      visibility: hidden;
-    }
-    .active button {
-      visibility: visible;
-    } 
-    .offscreen {
-      position: absolute;
-      left: -2000px;
-    }
-    .active .buttons {
-      padding: 5px 0;
-      background: #eee;
-      text-align: center;
-      z-index: 10;
-      position: relative;
-    }
-    .carouselbox b {
-      display: block;
-      transform: rotate(180deg);
-    }
     .active li {
       position: absolute;
       top: 200px;
-
-      pointer-events: none;
-      opacity: 0;
-      transform: scale(0);
-      transition: 1s;
     }
     .active li.current {
       top: 30px;
-
-      pointer-events: auto;
-      opacity: 1;
-      transform: scale(1);
-      transition: 1s;
     }
   </style>
 </head>
 
 <body>
 <div class="carouselbox active">
-  <div class="buttons">
-    <button class="prev">
-       <b>▶</b> <span class="offscreen">Previous</span>
-    </button>
-    <button class="next">
-      <span class="offscreen">Next</span> ▶ 
-    </button>
-  </div>
   <ol class="content">
     <li>1</li>
     <li class="current">2</li>

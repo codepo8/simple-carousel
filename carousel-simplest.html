@@ -29,10 +29,26 @@
       text-align: center;
       z-index: 2;
     }
-
-
     .active {
       height: 130px;
+    }
+    .active li {
+      position: absolute;
+      top: 200px;
+    }
+    .active li.current {
+      top: 30px;
+    }
+    .buttons {
+      display: none;
+    }
+    .active .buttons {
+      display: block;
+      padding: 5px 0;
+      background: #eee;
+      text-align: center;
+      z-index: 10;
+      position: relative;
     }
     .carouselbox button {
       border: none;
@@ -45,25 +61,10 @@
       position: absolute;
       left: -2000px;
     }
-
-    .active .buttons {
-      padding: 5px 0;
-      background: #eee;
-      text-align: center;
-      z-index: 10;
-      position: relative;
-    }
     .carouselbox b {
       display: block;
       transform: rotate(180deg);
-    }
-    .active li {
-      position: absolute;
-      top: 200px;
-    }
-    .active li.current {
-      top: 30px;
-    }
+    }  
   </style>
 </head>
 
@@ -102,13 +103,13 @@ carousel = (function(){
 
   // Read necessary elements from the DOM once
   var box = document.querySelector('.carouselbox');
-  var next = document.querySelector('.next');
-  var prev = document.querySelector('.prev');
+  var next = box.querySelector('.next');
+  var prev = box.querySelector('.prev');
 
   // Define the global counter, the items and the 
   // current item 
   var counter = 0;
-  var items = document.querySelectorAll('.content li');
+  var items = box.querySelectorAll('.content li');
   var amount = items.length;
   var current = items[0];
 
