@@ -132,6 +132,7 @@ carousel = (function(){
     
     // calculate the new position
     counter = (counter + direction) % amount;
+    counter = counter < 0 ? amount - 1 : counter;
 
     // set new current element 
     // and add CSS class
