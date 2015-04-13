@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carousel - Fancy versiob</title>
+  <title>Carousel - Images version</title>
   <link rel="stylesheet" type="text/css" href="furniture.css">
   <style type="text/css">
     .carouselbox {
@@ -55,15 +55,13 @@
     }
     .active li {
       position: absolute;
-      top: 130px;
-
+      top: 20px;
       opacity: 0;
       transform: scale(0);
       transition: 1s;
     }
     .active li.current {
       top: 20px;
-
       opacity: 1;
       transform: scale(1);
       transition: 1s;
@@ -99,9 +97,11 @@
     <li><a href="carousel-noscript.html">Plain HTML carousel structure</a></li>
     <li><a href="carousel-css-only.html">Styled and ready carousel</a></li>
     <li><a href="carousel-simplest.html">Simplest possible carousel</a></li>
-    <li><strong>Fancier carousel</strong></li>
+    <li><a href="carousel-fancy.html">Fancier carousel</a></li>
     <li><a href="carousel-progressive-enhancement.html">Capability testing</a></li>
     <li><a href="carousel-pointer-events.html">CSS Pointer events fix</a></li>
+    <li><strong>Carousel with images</strong></li>
+    <li><a href="https://github.com/codepo8/simple-carousel">View Source on GitHub</a></li>
   </ul>
 </nav>
 
@@ -130,25 +130,8 @@ carousel = (function(){
     // hide the old current list item 
     current.classList.remove('current');
     
-    // calculate th new position
-    counter = counter + direction;
-
-    // if the previous one was chosen
-    // and the counter is less than 0 
-    // make the counter the last element,
-    // thus looping the carousel
-    if (direction === -1 && 
-        counter < 0) { 
-      counter = amount - 1; 
-    }
-
-    // if the next button was clicked and there 
-    // is no items element, set the counter 
-    // to 0
-    if (direction === 1 && 
-        !items[counter]) { 
-      counter = 0;
-    }
+    // calculate the new position
+    counter = (counter + direction) % amount;
 
     // set new current element 
     // and add CSS class

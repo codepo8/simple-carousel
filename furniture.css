@@ -16,3 +16,16 @@ nav li {
   list-style: square;
   line-height: 1.5em;
 }
+nav li:last-child {
+  margin-top: 2em;
+  list-style: none;
+  font-weight: bold;
+}
+nav li:last-child a {
+  background: #369;
+  display: inline-block;
+  margin-left: -1em;
+  padding: 2px 5px;
+  color: #fff;
+  text-decoration: none;
+}
